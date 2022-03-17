@@ -25,8 +25,8 @@ const removeItem = (id:number)=>{
 }
   return (
     <div className="App">
-       {products.map(item => {
-        return  <div>{item.name}<button onClick={()=>removeItem(item._id)}>Remove</button></div>
+       {products.map((item,index) => {
+        return  <div key={index}>{item.name}<button onClick={()=>removeItem(item._id)}>Remove</button></div>
       })}
       <header>
         <ul>
@@ -44,7 +44,7 @@ const removeItem = (id:number)=>{
       <main>
         <Routes>
 <Route path='/' element={<h1>Home Page</h1>}/>
-<Route path='product' element={products.map(item=><div>{item.name}</div>)}/>
+<Route path='product' element={products.map((item,index)=><div key={index}>{item.name}</div>)}/>
 <Route path='about' element={<ShowInfo name="abc" age={10}/>}/>
         </Routes>
       </main>

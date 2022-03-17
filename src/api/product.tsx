@@ -1,6 +1,6 @@
 import instance  from "./instance";
 export const list = ()=>{
-    const url = "/product";
+    const url = "/products";
     return instance.get(url);
 }
 export const remove = (id:number)=>{
