@@ -1,8 +1,35 @@
 import React from 'react'
-type Props = {}
-const ProductManager = (props:Props) => {
+import { IProduct } from '../../types/product'
+type ProductManagerProps = {
+
+  products:IProduct[];
+  onRemove:(id:number)=>void
+}
+const ProductManager = (props:ProductManagerProps) => {
   return (
-    <div>ProductManager</div>
+    <div>
+      <table>
+        <thead>
+          <th>#</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Thao tac</th>
+        </thead>
+        <tbody>
+          {props.products.map((item,index)=>{
+            return 
+            <tr key={index}>
+              <td>{index+1}</td>
+              <td>{item.name}</td>
+              <td>{item.price}</td>
+              {/* <td>
+                <button onClick={()=>props.onRemove(item.id)}>Remove</button>
+              </td> */}
+            </tr>
+          })}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
