@@ -1,4 +1,3 @@
-import React from 'react'
 import { IProduct } from '../../types/product'
 type ProductManagerProps = {
 
@@ -17,15 +16,17 @@ const ProductManager = (props:ProductManagerProps) => {
         </thead>
         <tbody>
           {props.products.map((item,index)=>{
-            return 
-            <tr key={index}>
+            return (
+              <tr key={index}>
               <td>{index+1}</td>
               <td>{item.name}</td>
               <td>{item.price}</td>
-              {/* <td>
+              <td>
                 <button onClick={()=>props.onRemove(item.id)}>Remove</button>
-              </td> */}
+              </td>
             </tr>
+            )
+           
           })}
         </tbody>
       </table>
