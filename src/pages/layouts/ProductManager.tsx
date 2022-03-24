@@ -1,4 +1,5 @@
 import { IProduct } from '../../types/product'
+import {Link} from "react-router-dom"
 type ProductManagerProps = {
 
   products:IProduct[];
@@ -7,6 +8,7 @@ type ProductManagerProps = {
 const ProductManager = (props:ProductManagerProps) => {
   return (
     <div>
+      <Link to={"/admin/products/add"}>Them moi</Link>
       <table>
         <thead>
           <th>#</th>
@@ -22,6 +24,7 @@ const ProductManager = (props:ProductManagerProps) => {
               <td>{item.name}</td>
               <td>{item.price}</td>
               <td>
+              <Link to={`/admin/products/${item.id}/edit`}>Edit</Link>
                 <button onClick={()=>props.onRemove(item.id)}>Remove</button>
               </td>
             </tr>

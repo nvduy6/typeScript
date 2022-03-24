@@ -1,14 +1,19 @@
 {
   "products": [
     {
-      "name": "San pham B",
+      "name": "San pham B1234",
       "price": "5000",
       "id": 1
     },
     {
-      "name": "duy",
+      "name": "duy123454657",
       "price": "50",
       "id": 2
+    },
+    {
+      "name": "nukeviet",
+      "price": "50",
+      "id": 3
     }
   ]
 }
