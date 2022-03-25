@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
-import logo from './logo.svg'
 import "./dashboard.css";
 import "bootstrap/dist/css/bootstrap.min.css"
 import type { IProduct } from './types/product'
-import Product from './components/Product'
-import ShowInfo from './components/ShowInfo'
 import { add, list, remove, update } from './api/product'
 import WebsiteLayout from './pages/layouts/WebsiteLayout';
 import Home from './pages/Home';
@@ -41,22 +38,6 @@ function App() {
   }
   return (
     <div className="App">
-      {/* {products.map((item,index) => {
-        return  <div key={index}>{item.name}<button onClick={()=>removeItem(item.id)}>Remove</button></div>
-      })} */}
-      <header>
-        <ul>
-          <li>
-            <NavLink to="/">Home Page</NavLink>
-          </li>
-          <li>
-            <NavLink to="/product">Product Page</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-        </ul>
-      </header>
       <main>
         <Routes>
           <Route path='/' element={<WebsiteLayout />}>
