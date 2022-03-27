@@ -13,12 +13,13 @@ const WebsiteLayout = (props:Props) => {
     <Layout>
     <Header className="header">
       <div className="logo" />
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+      <Menu theme="dark" mode="horizontal">
         <Menu.Item key="1">
          <NavLink to={"/"}>Home</NavLink>
          </Menu.Item>
         <Menu.Item key="2"><NavLink to={"/product"}>Product</NavLink></Menu.Item>
         <Menu.Item key="3"><NavLink to={"/about"}>About</NavLink></Menu.Item>
+        <Menu.Item key="4"><NavLink to={"/signup"}>Signup</NavLink></Menu.Item>
       </Menu>
     </Header>
     <Content style={{ padding: '0 50px' }}>

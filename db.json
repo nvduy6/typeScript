@@ -15,5 +15,67 @@
       "price": "50",
       "id": 3
     }
+  ],
+  "users": [
+    {
+      "name": "nukeviet",
+      "email": "duynvph15542@fpt.edu.vn",
+      "password": "123abc",
+      "id": 1
+    },
+    {
+      "name": "nukeviet",
+      "email": "duynvph15542@fpt.edu.vn",
+      "password": "123abc",
+      "id": 2
+    },
+    {
+      "name": "duy",
+      "email": "bachnvph15542@fpt.edu.vn",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "name": "admin",
+      "email": "duynvph15542@fpt.eud.vn",
+      "password": "Duy1234$",
+      "id": 4
+    },
+    {
+      "name": "admin",
+      "email": "duynvph15542@fpt.eud.vn",
+      "password": "Duy1234$",
+      "id": 5
+    },
+    {
+      "name": "duy",
+      "email": "duynvph15542@fpt.edu.vn",
+      "password": "Duy1234$",
+      "id": 6
+    },
+    {
+      "name": "duy",
+      "email": "duynguyenvan328@gmail.com",
+      "password": "123abc",
+      "id": 7
+    },
+    {
+      "name": "admin",
+      "email": "duynvph15542@fpt.eud.vn",
+      "password": "Duy1234$",
+      "id": 8
+    },
+    {
+      "name": "duy",
+      "email": "duynvph15542@fpt.eud.vn",
+      "password": "123456",
+      "id": 9
+    },
+    {
+      "name": "nukeviet",
+      "email": "duynguyenvan328@gmail.com",
+      "password": "123456",
+      "id": 10
+    }
   ]
 }

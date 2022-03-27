@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
+import { Routes, Route, NavLink, Navigate, useResolvedPath } from 'react-router-dom';
 import "./dashboard.css";
 import "bootstrap/dist/css/bootstrap.min.css"
 import type { IProduct } from './types/product'
@@ -11,10 +11,14 @@ import Dashboard from './pages/Dashboard';
 import ProductManager from './pages/layouts/ProductManager';
 import ProductAdd from './pages/layouts/ProductAdd';
 import ProductEdit from './pages/layouts/ProductEdit';
-
+import { IUser } from './types/auth';
+import { sigupAdd } from './api/auth';
+import Signup from './pages/layouts/signup';
+import Signin from './pages/layouts/signin';
 function App() {
   const [count, setCount] = useState(0)
   const [products, setProducts] = useState<IProduct[]>([]);
+  const [users, setUsers] = useState<IUser[]>([]);
   useEffect(() => {
     const getProducts = async () => {
       const { data } = await list();
@@ -32,9 +36,13 @@ function App() {
     const { data } = await add(product);
     setProducts([...products, data])
   }
-  const onHandleUpdate = async (product:IProduct)=>{
-    const{data} = await update(product);
-    setProducts(products.map(item=>item.id == data.id? data:item));
+  const onHandlerAdduser = async (user: IUser) => {
+    const { data } = await sigupAdd(user);
+    setUsers([...users, data])
+  }
+  const onHandleUpdate = async (product: IProduct) => {
+    const { data } = await update(product);
+    setProducts(products.map(item => item.id == data.id ? data : item));
   }
   return (
     <div className="App">
@@ -44,6 +52,9 @@ function App() {
             <Route index element={<Home />} />
             <Route path="product" element={<h1>Hien thi san pham</h1>} />
             <Route path="about" element={<h1>About page</h1>} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="signin" element={<Signin />} />
+
           </Route>
 
           <Route path="admin" element={<AdminLayout />}>
@@ -51,7 +62,7 @@ function App() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="products"  >
               <Route index element={<ProductManager products={products} onRemove={removeItem} />} />
-              <Route path=":id/edit" element={<ProductEdit onUpdate={onHandleUpdate}/>} />
+              <Route path=":id/edit" element={<ProductEdit onUpdate={onHandleUpdate} />} />
               <Route path="add" element={<ProductAdd name="Dat" onAdd={onHandlerAdd} />} />
             </Route>
           </Route>
