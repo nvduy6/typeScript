@@ -13,8 +13,8 @@ import ProductAdd from './pages/layouts/ProductAdd';
 import ProductEdit from './pages/layouts/ProductEdit';
 import { IUser } from './types/auth';
 import { sigupAdd } from './api/auth';
-import Signup from './pages/layouts/signup';
-import Signin from './pages/layouts/signin';
+import Signup from './pages/layouts/Signup';
+import Signin from './pages/layouts/Signin';
 function App() {
   const [count, setCount] = useState(0)
   const [products, setProducts] = useState<IProduct[]>([]);
